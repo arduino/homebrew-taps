@@ -54,8 +54,11 @@ class Runbook < Formula
   def install
     # Copy user's RubyGems config to temporary build home.
     buildpath_gemrc = "#{ENV['HOME']}/.gemrc"
-    if File.exists?('/home/etenani/.gemrc') && !File.exists?(buildpath_gemrc)
-      FileUtils.cp('/home/etenani/.gemrc', buildpath_gemrc)
+    gemrc = nil
+    gemrc = "/Users/#{ENV['USER']}/.gemrc" if OS.mac?
+    gemrc = "/home/#{ENV['USER']}/.gemrc" if OS.linux?
+    if File.exists?(gemrc) && !File.exists?(buildpath_gemrc)
+      FileUtils.cp(gemrc, buildpath_gemrc)
     end
 
     # set GEM_HOME and GEM_PATH to make sure we package all the dependent gems
