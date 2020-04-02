@@ -48,6 +48,7 @@ class Runbook < Formula
   desc "A framework for gradual system automation"
   homepage "https://github.com/braintree/runbook"
   url "runbook", :using => RubyGemsDownloadStrategy
+  sha256 "093bad7d65efc78f25901610f43097e1f7fbc84dd1c6ddebd852894dbfb89b12"
   version "0.16.1"
   depends_on "ruby"
 
