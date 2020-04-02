@@ -42,7 +42,7 @@ class RubyGemsDownloadStrategy < AbstractDownloadStrategy
   end
 end
 
-class GemRunbook < Formula
+class Runbook < Formula
   include RubyBin
 
   desc "A framework for gradual system automation"
