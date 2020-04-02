@@ -48,8 +48,8 @@ class Runbook < Formula
   desc "A framework for gradual system automation"
   homepage "https://github.com/braintree/runbook"
   url "runbook", :using => RubyGemsDownloadStrategy
-  sha256 "093bad7d65efc78f25901610f43097e1f7fbc84dd1c6ddebd852894dbfb89b12"
   version "0.16.1"
+  sha256 "093bad7d65efc78f25901610f43097e1f7fbc84dd1c6ddebd852894dbfb89b12"
   depends_on "ruby"
 
   def install
@@ -59,8 +59,9 @@ class Runbook < Formula
     gemrc = "/Users/#{ENV['USER']}/.gemrc" if OS.mac?
     gemrc = "/home/#{ENV['USER']}/.gemrc" if OS.linux?
     if File.exists?(gemrc) && !File.exists?(buildpath_gemrc)
-      FileUtils.cp(gemrc, buildpath_gemrc)
+      cp(gemrc, buildpath_gemrc)
     end
+    return
 
     # set GEM_HOME and GEM_PATH to make sure we package all the dependent gems
     # together without accidently picking up other gems on the gem path since
