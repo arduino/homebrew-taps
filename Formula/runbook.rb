@@ -61,7 +61,6 @@ class Runbook < Formula
     if File.exists?(gemrc) && !File.exists?(buildpath_gemrc)
       cp(gemrc, buildpath_gemrc)
     end
-    return
 
     # set GEM_HOME and GEM_PATH to make sure we package all the dependent gems
     # together without accidently picking up other gems on the gem path since
