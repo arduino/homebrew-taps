@@ -4,3 +4,6 @@
 # default owners
 # * [none]
 
+# For each Formula add the maintainer name
+Formula/runbook.rb @endorama
+Formula/petname.rb @endorama
